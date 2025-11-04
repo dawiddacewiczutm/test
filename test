@@ -1,7 +1,13 @@
 useradd -m -c "Dawid Dacewicz - Administrator Beyond.pl" -s /bin/bash d.dacewicz && usermod -aG sudo d.dacewicz && cd /home/d.dacewicz
+
 mkdir .ssh
+
 chmod 700 .ssh
+
 echo -en "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDQzMUPWjVFXP1YDL4sjGnJ1X864ukejFmAnGz5T4G0bVbeTNaCcNAW3wIE/2pHMPgQXy8QbnXVQBsQRBe4fDoeYFUYc3D2ZNQct5dDYOA6NkIY436iMIFasE9vWfb0+Oqb6/8CHux+EdyCBvIM0DmxFwb/TWELpUehdUav4DluGIPlH5pH5vy9amYdJOHImsOlh6QlepDxysRSwZ/ImdZg86u5Hd4Y0Ab1cYG23v3niuHIgLBq/qykIDK9+meUdg8XfzsjlkeoUOUPC2+R3WxK1kaSOlCBweicZW065CWGGYNJvbpMuMQJtQyQDOqUz66XhOxqPWAEmBYMBGGagK5x1diIXV2m3kJt42pj5pG7fQiA/0Pjej+0xPalw0u3WN/Bca9TJpJk41B3F1+6o+tGuKXSvqbw+6AhsZnX3WzC9P1MLLOro5p28M9Zuky7JNS1qqK1oWi8exBO97F4TyCnHeundZeS/c+b89Vqo9t0XB7M3GKLWtEjlt9aJL9J715UNuaXaprZUmmDrG9URySgnW80Q5Ab+8b15K3eo3EILu/nAT9NeYt9D51sLew725jACUAUz+sKyHb6HWJNdKM/M/42M0gFfZRRKHmrZOFXeCqfpoxaWmN8miA0o7ijE+1zmq0+DqcKN55565exMzNtk9cgQzygwQQtLnGNwSK6Tw== user@local" > .ssh/authorized_keys 
+
 cat /home/d.dacewicz/.ssh/authorized_keys >> /etc/ssh/sudo_authorized_keys
+
 chmod 600 .ssh/authorized_keys
+
 chown -R d.dacewicz:d.dacewicz .ssh
